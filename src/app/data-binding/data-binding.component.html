@@ -1,6 +1,6 @@
 <section class="property-binding">
 
- <!--   <article>
+   <article>
         <h3>Interpolation / Interpolação</h3>
         <p>String renderizada com interpolação: {{ url }}</p>
         <p>Resultado da soma de 1 + 1 é {{ 1+1 }}</p>
@@ -11,11 +11,11 @@
     <article>
 
         <h3>Property Binding</h3>
-         Diferentes formas de utilizar a interpolação --comentar essa linha
+            Diferentes formas de utilizar a interpolação <!--comentar essa linha -->
         <img src="{{ urlImagem }}">
         <img [src]="urlImagem">
         <img bind-src="urlImagem">
-    </article> -->
+    </article> 
 
     <h3>Class e Style Binding</h3>
     <div>
@@ -35,7 +35,7 @@
         </div>
         <div class="alert" role="alert"
             [class.alert-info]="classe.value == 'alert-info'">Info
-        </div><!-- uma forma diferente -->
+        </div>
         <div class="alert" role="alert"
             [class.alert-warning]="classe.value == 'alert-warning'">Aviso
         </div>
@@ -80,6 +80,35 @@
                 >
                 Passe o mouse sobre mim!
             </span>
+        </div>
+    </article>
+</section>
+
+<section class="two-way-binding">
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <input type="text"
+                [value]="nome"
+                (input)="nome = $any($event.target).value"
+            />
+
+            <input type="text"
+                [ngModel]="nome"
+                (ngModelChange)="nome = $event"
+            />
+            
+            <input type="text" [(ngModel)]="nome"> <!-- Two Way Data Binding -->
+            <br>
+           <p> Nome: {{ nome }}</p>
+            
+        </div>
+
+        <div>
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade</p>
+
+            <input type="text" bindon-ngModel="pessoa.nome"/>
+            <input type="text" [(ngModel)]="pessoa.idade"/>
         </div>
     </article>
 </section>

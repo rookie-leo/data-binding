@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
   ],
   imports: [
     BrowserModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
